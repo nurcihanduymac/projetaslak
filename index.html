@@ -3,60 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akademik Proje Başlığı | Açık Erişim</title>
+    <title>Yüz Sene Yaşamak İçin | TÜBİTAK 2209 Projesi</title>
     
-    <!-- Bootstrap 5 CSS (Sade ve Modern Görünüm İçin) -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Akademik Font (Merriweather & Roboto) -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Akademik ve Tarihsel Görünüm İçin Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (İkonlar için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
+        :root {
+            --primary-color: #2c3e50; /* Koyu Lacivert/Gri - Ciddiyet */
+            --secondary-color: #c0392b; /* Tarihsel bordo vurgular */
+            --bg-light: #f8f9fa;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Merriweather', serif;
-            color: #1a237e; /* Akademik Lacivert */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Playfair Display', serif; /* Tarihsel doku için serif font */
+            color: var(--primary-color);
         }
         .navbar {
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--primary-color);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
         .navbar-brand {
-            font-weight: bold;
-            color: #1a237e !important;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
         .hero-section {
-            padding: 80px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1461360228754-6e81c478b882?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Arkaplana eski kağıt veya kütüphane resmi konabilir */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
         }
-        .section-padding {
-            padding: 60px 0;
-        }
-        .card-academic {
-            border: none;
-            border-left: 4px solid #1a237e;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .hero-section h1 {
+            color: #fff;
+            font-size: 3rem;
             margin-bottom: 20px;
         }
-        .btn-download {
-            background-color: #1a237e;
-            color: white;
+        .section-padding {
+            padding: 80px 0;
         }
-        .btn-download:hover {
-            background-color: #0d1b60;
+        .nav-tabs .nav-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .nav-tabs .nav-link.active {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        .card-team {
+            border: none;
+            background: var(--bg-light);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        .card-team:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .badge-tubitak {
+            background-color: #d63031;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .download-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background-color: #1a252f;
             color: white;
         }
         footer {
-            background-color: #212529;
-            color: #aaa;
+            background-color: var(--primary-color);
+            color: #bdc3c7;
             padding: 40px 0;
-            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -65,134 +106,224 @@
     <!-- Navigasyon -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">PROJE KODU: 1234</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-book-medical me-2"></i>Yüz Sene Yaşamak İçin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#ozet">Proje Özeti</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#yontem">Yöntem</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ekip">Araştırma Ekibi</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#ciktilar">Proje Çıktıları (Veri & Rapor)</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ozet">Proje Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#arsiv">Dijital Arşiv & Metinler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ekip">Proje Ekibi</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Başlık Alanı -->
-    <header class="hero-section text-center mt-5">
+    <!-- Hero / Başlık Alanı -->
+    <header class="hero-section mt-5">
         <div class="container">
-            <span class="badge bg-secondary mb-2">TÜBİTAK / BAP Destekli Proje</span>
-            <h1 class="display-5 fw-bold">Sürdürülebilir Şehir Planlamasında Yapay Zeka Kullanımı</h1>
-            <p class="lead mt-3 text-muted w-75 mx-auto">Bu proje, kentsel dönüşüm süreçlerini optimize etmek için yeni algoritmalar geliştirmeyi amaçlayan açık erişimli bir akademik çalışmadır.</p>
+            <span class="badge-tubitak">TÜBİTAK 2209-A Araştırma Projesi</span>
+            <h1 class="display-4">"Yüz Sene Yaşamak İçin"</h1>
+            <p class="lead w-75 mx-auto">Osmanlı Son Dönem Sağlık Literatüründe Bir Eser ve Dört Farklı Tercümesi Üzerine Karşılaştırmalı Bir İnceleme</p>
         </div>
     </header>
 
-    <!-- Proje Detayları -->
-    <section id="ozet" class="section-padding">
+    <!-- Proje Özeti -->
+    <section id="ozet" class="section-padding bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <h2>Proje Hakkında</h2>
-                    <p>Buraya projenin detaylı amacı, literatürdeki yeri ve hedefleri girilecek. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Araştırmamız açık bilim ilkelerine uygun olarak yürütülmekte olup, tüm veriler anonimleştirilerek paylaşılacaktır.</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="card p-3 bg-light border-0">
-                        <h4>Proje Künyesi</h4>
-                        <ul class="list-unstyled">
-                            <li><strong>Yürütücü:</strong> Prof. Dr. Ad Soyad</li>
-                            <li><strong>Kurum:</strong> X Üniversitesi</li>
-                            <li><strong>Süre:</strong> 24 Ay</li>
-                            <li><strong>Durum:</strong> Devam Ediyor</li>
-                        </ul>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Proje Özeti ve Amaç</h2>
+                        <div style="width: 60px; height: 3px; background-color: #c0392b; margin: 15px auto;"></div>
+                    </div>
+                    
+                    <div class="bg-white p-5 shadow-sm rounded">
+                        <p class="mb-4">
+                            Osmanlının son dönemine ait, uzun ve sağlıklı yaşam literatüründe, birbirine yakın tarihlerde <strong>dört farklı tercümeye</strong> sahip olmasıyla dikkat çekici bir eser olan <em>“Yüz Sene Yaşamak İçin”</em> dönemin tıp tarihine dair incelemelerde bulunmak için önemli bir kaynaktır. Esere dair özet bilgiler içeren kısa bir makale haricinde tatmin edici malumat mevcut değildir.
+                        </p>
+                        <p class="mb-4">
+                            Bu proje kapsamında “Yüz Sene Yaşamak İçin” adlı eser üzerine ileri araştırmalar yapmak amacıyla; eserin transkripsiyonu yapılıp farklı tercümeler arasındaki değişiklikler incelenecektir. Ardından mütercimlere dair elde edilecek bilgilerin ve eser içeriğinin döneminin tıp tarihi çerçevesinde analizi yapılacaktır.
+                        </p>
+                        <p>
+                            <strong>Yöntem:</strong> Çalışmada ilk olarak eserin kaynak metninin ve tercümelerinin dijital ya da baskı olarak temini sağlandıktan sonra <strong>İSAM transkripsiyon yöntemine göre</strong> proje yürütücüsü ve danışman tarafından latinize edilecektir. Ardından proje yürütücüsü tarafından metin içeriği detaylı mukayeselere tabi tutulacak ve sonuçlar nitel analizle incelenecektir.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proje Çıktıları / Dosya Yükleme Alanı -->
-    <section id="ciktilar" class="section-padding bg-white">
+    <!-- Dijital Arşiv (Dosya Yükleme Alanı) -->
+    <section id="arsiv" class="section-padding">
         <div class="container">
-            <h2 class="mb-4 border-bottom pb-2">Proje Çıktıları ve Dosyalar</h2>
-            <p class="text-muted">Aşağıdaki listeden proje raporlarına, ham veri setlerine ve sunumlara ulaşabilirsiniz.</p>
-            
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Dosya Adı</th>
-                            <th>Tür</th>
-                            <th>Yayın Tarihi</th>
-                            <th>İşlem</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Proje Ara Raporu - Dönem 1</td>
-                            <td><span class="badge bg-danger">PDF</span></td>
-                            <td>15.10.2023</td>
-                            <td><a href="#" class="btn btn-sm btn-download">İndir</a></td>
-                        </tr>
-                        <tr>
-                            <td>Anket Veri Seti (Ham Veri)</td>
-                            <td><span class="badge bg-success">XLSX</span></td>
-                            <td>20.11.2023</td>
-                            <td><a href="#" class="btn btn-sm btn-download">İndir</a></td>
-                        </tr>
-                        <tr>
-                            <td>Konferans Sunumu (PPT)</td>
-                            <td><span class="badge bg-warning text-dark">PPTX</span></td>
-                            <td>05.01.2024</td>
-                            <td><a href="#" class="btn btn-sm btn-download">İndir</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="text-center mb-5">
+                <h2>Dijital Arşiv ve Çıktılar</h2>
+                <p class="text-muted">Proje kapsamında incelenen orijinal metinler, transkripsiyonlar ve analiz raporlarına aşağıdan erişebilirsiniz.</p>
             </div>
 
-            <!-- Yönetici İçin Yükleme Alanı Simülasyonu (Backend gerekir) -->
-            <div class="mt-5 p-4 border rounded bg-light">
-                <h5>📂 Yeni Dosya Yükle (Yalnızca Yönetici)</h5>
-                <small class="text-muted">Bu alanın çalışması için sunucu tarafında (PHP/Python/Node.js) kodlama veya WordPress gerekir. Statik sitelerde buraya Google Drive linki verilebilir.</small>
-                <form class="mt-3">
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="inputGroupFile02">
-                        <button class="input-group-text" for="inputGroupFile02">Yükle</button>
+            <!-- Sekmeler (Tabs) -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="orijinal-tab" data-bs-toggle="tab" data-bs-target="#orijinal" type="button" role="tab">Fransızca Orijinal</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="osmanlica-tab" data-bs-toggle="tab" data-bs-target="#osmanlica" type="button" role="tab">Osmanlıca Nüshalar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="transkrip-tab" data-bs-toggle="tab" data-bs-target="#transkrip" type="button" role="tab">Transkripsiyonlar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="analiz-tab" data-bs-toggle="tab" data-bs-target="#analiz" type="button" role="tab">Proje Raporu & Analiz</button>
+                </li>
+            </ul>
+
+            <!-- Sekme İçerikleri -->
+            <div class="tab-content" id="myTabContent">
+                
+                <!-- 1. Fransızca Orijinal -->
+                <div class="tab-pane fade show active" id="orijinal" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Eser Adı</th>
+                                    <th>Yazar</th>
+                                    <th>Basım Yılı</th>
+                                    <th>Dosya</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="far fa-file-pdf text-danger me-2"></i> Pour vivre cent ans (Orijinal Metin)</td>
+                                    <td>[Yazar Adı]</td>
+                                    <td>18XX</td>
+                                    <td><a href="dosyalar/fransizca_orijinal.pdf" class="download-btn" target="_blank"><i class="fas fa-download me-1"></i> İndir</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </form>
+                </div>
+
+                <!-- 2. Osmanlıca Nüshalar -->
+                <div class="tab-pane fade" id="osmanlica" role="tabpanel">
+                    <div class="alert alert-info border-0 shadow-sm">
+                        <i class="fas fa-info-circle me-2"></i> Bu bölümde eserin tespit edilen 4 farklı Osmanlıca tercümesinin orijinal görüntüleri yer almaktadır.
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Nüsha / Versiyon</th>
+                                    <th>Mütercim (Çevirmen)</th>
+                                    <th>Tarih</th>
+                                    <th>Dosya</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1. Tercüme (Matbu)</strong></td>
+                                    <td>Ahmet Mithat Efendi (Örnek)</td>
+                                    <td>H. 1305</td>
+                                    <td><a href="#" class="download-btn">İndir (PDF)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Tercüme</strong></td>
+                                    <td>[Mütercim Adı]</td>
+                                    <td>H. 1308</td>
+                                    <td><a href="#" class="download-btn">İndir (PDF)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Tercüme</strong></td>
+                                    <td>[Mütercim Adı]</td>
+                                    <td>H. 1310</td>
+                                    <td><a href="#" class="download-btn">İndir (PDF)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4. Tercüme</strong></td>
+                                    <td>[Mütercim Adı]</td>
+                                    <td>H. 1312</td>
+                                    <td><a href="#" class="download-btn">İndir (PDF)</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Transkripsiyonlar -->
+                <div class="tab-pane fade" id="transkrip" role="tabpanel">
+                    <p class="text-muted">Aşağıdaki metinler İSAM transkripsiyon kurallarına göre latinize edilmiştir.</p>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">1. Tercüme Tam Metin Transkripsiyonu</h6>
+                                <small class="text-muted">Son Güncelleme: 10.12.2023</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">PDF</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">2. Tercüme Tam Metin Transkripsiyonu</h6>
+                                <small class="text-muted">Son Güncelleme: 10.12.2023</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">PDF</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">Karşılaştırmalı Metin Tablosu</h6>
+                                <small class="text-muted">4 nüshanın cümle bazlı karşılaştırması</small>
+                            </div>
+                            <span class="badge bg-success rounded-pill">XLSX</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Analiz ve Rapor -->
+                <div class="tab-pane fade" id="analiz" role="tabpanel">
+                     <div class="card p-4 border-0 shadow-sm">
+                        <h5>Sonuç Raporu</h5>
+                        <p>Eserin tıp tarihi açısından önemi ve mütercimlerin çeviri tercihlerine dair yapılan nitel analiz sonuçları.</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-dark"><i class="fas fa-file-pdf me-2"></i>Proje Sonuç Raporunu İndir</a>
+                        </div>
+                     </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Ekip -->
-    <section id="ekip" class="section-padding">
+    <!-- Proje Ekibi -->
+    <section id="ekip" class="section-padding bg-light">
         <div class="container">
-            <h2 class="mb-4">Araştırma Ekibi</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="card-academic p-4">
-                        <h5>Prof. Dr. Ad Soyad</h5>
-                        <p class="text-muted mb-0">Proje Yürütücüsü</p>
-                        <small>X Üniversitesi</small>
+            <h2 class="text-center mb-5">Proje Ekibi</h2>
+            <div class="row justify-content-center">
+                
+                <!-- Danışman -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-team h-100 p-4 text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-tie fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="fw-bold">Dr. Öğr. Üyesi Ahmet Göksu</h5>
+                        <p class="text-danger fw-bold mb-1">Proje Danışmanı</p>
+                        <p class="small text-muted">Akademik Süpervizyon & Transkripsiyon Kontrolü</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card-academic p-4">
-                        <h5>Arş. Gör. Ad Soyad</h5>
-                        <p class="text-muted mb-0">Araştırmacı</p>
-                        <small>Y Üniversitesi</small>
+
+                <!-- Yürütücü -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-team h-100 p-4 text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-graduate fa-3x text-secondary"></i>
+                        </div>
+                        <h5 class="fw-bold">Nurcihan Duymaç</h5>
+                        <p class="text-primary fw-bold mb-1">Proje Yürütücüsü</p>
+                        <p class="small text-muted">Veri Toplama, Transkripsiyon & Mukayeseli Analiz</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card-academic p-4">
-                        <h5>Bursiyer Adı</h5>
-                        <p class="text-muted mb-0">Doktora Bursiyeri</p>
-                        <small>X Üniversitesi</small>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -200,8 +331,12 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p class="mb-1">Bu proje TÜBİTAK 1001 Programı kapsamında desteklenmektedir.</p>
-            <p class="small text-muted">&copy; 2025 Akademik Proje Grubu. Tüm hakları saklıdır.</p>
+            <h5 class="mb-3">TÜBİTAK 2209-A</h5>
+            <p class="small text-white-50 w-75 mx-auto">
+                Bu web sitesi, TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destekleme Programı kapsamında desteklenen proje çıktılarının açık erişimle paylaşılması amacıyla hazırlanmıştır.
+            </p>
+            <hr class="w-25 mx-auto my-4">
+            <p class="mb-0">&copy; 2024-2025 | Yüz Sene Yaşamak İçin Projesi</p>
         </div>
     </footer>
 
