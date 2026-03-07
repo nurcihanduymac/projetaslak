@@ -18,16 +18,38 @@
 
     <style>
         :root {
-            --primary-color: #2c3e50; /* Akademik Lacivert/Gri */
-            --secondary-color: #a52a2a; /* Osmanlı/Tarih Bordo */
-            --bg-light: #f8f9fa;
+            /* SAĞLIK VE TARİH TEMALI RENK PALETİ */
+            --primary-color: #2E5049; /* Akademik Orman Yeşili */
+            --secondary-color: #BC6C25; /* Kiremit Rengi */
+            --bg-color: #faf9f6; /* Kırık Beyaz */
+            --text-dark: #2c3333;
         }
         
         body {
             font-family: 'Open Sans', sans-serif; 
-            color: #333;
-            background-color: #fff;
-            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+            line-height: 1.8;
+            position: relative; /* Arkaplan görseli için gerekli */
+        }
+
+        /* ARKAPLAN SEMBOLÜ AYARLARI */
+        body::before {
+            content: "";
+            position: fixed; /* Sayfa kaydırılsa bile resim sabit kalır */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 'sembol.jpg' dosyasının index.html ile aynı klasörde olması gerekir */
+            background-image: url('sembol.jpg'); 
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 600px auto; /* Resmin ekrandaki büyüklüğü */
+            opacity: 0.08; /* %8 Opaklık - Yazıları engellememesi için çok silik */
+            z-index: -1; /* İçeriğin arkasında kalmasını sağlar */
+            pointer-events: none; /* Tıklamaları engellemez */
+            filter: grayscale(100%) sepia(20%); /* Hafif eski görünüm efekti */
         }
 
         h1, h2, h3, h4, h5, .navbar-brand {
@@ -37,69 +59,75 @@
         }
 
         .navbar {
-            background-color: #fff;
-            border-bottom: 3px solid var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.95); /* Hafif şeffaf */
+            border-bottom: 4px solid var(--primary-color);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         
         .navbar-brand {
             font-weight: 700;
             font-size: 1.4rem;
+            color: var(--primary-color) !important;
         }
 
         .hero-section {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(46, 80, 73, 0.9), rgba(46, 80, 73, 0.85)), url('https://images.unsplash.com/photo-1544367563-12123d832d34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 0;
+            padding: 140px 0;
             text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
         }
         
         .hero-section h1 {
             color: #fff;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .section-padding {
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
         /* Sekme (Tab) Tasarımı */
         .nav-tabs {
-            border-bottom: 2px solid #dee2e6;
+            border-bottom: 2px solid #e0e0e0;
         }
         .nav-tabs .nav-link {
             color: var(--primary-color);
             font-weight: 600;
             font-family: 'Open Sans', sans-serif;
             border: none;
-            padding: 15px 25px;
+            padding: 15px 30px;
+            border-radius: 10px 10px 0 0;
+            transition: all 0.3s ease;
+            background-color: rgba(255,255,255,0.5); /* Sekmelerin arkası hafif şeffaf */
         }
         .nav-tabs .nav-link.active {
-            color: var(--secondary-color);
-            border-bottom: 3px solid var(--secondary-color);
-            background-color: transparent;
+            color: #fff;
+            background-color: var(--primary-color);
+            border-bottom: none;
         }
-        .nav-tabs .nav-link:hover {
-            border-color: transparent;
+        .nav-tabs .nav-link:hover:not(.active) {
+            background-color: #e9ecef;
             color: var(--secondary-color);
         }
 
         /* Kart ve Tablo Stilleri */
         .card-team {
             border: none;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--secondary-color);
+            background: rgba(255, 255, 255, 0.9); /* Kartlar hafif şeffaf olsun ki arkadaki sembol hissedilsin */
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--secondary-color);
         }
         .card-team:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .badge-tubitak {
@@ -107,35 +135,38 @@
             color: white;
             font-family: 'Open Sans', sans-serif;
             font-weight: 600;
-            font-size: 0.85rem;
-            padding: 8px 16px;
+            font-size: 0.9rem;
+            padding: 10px 20px;
             border-radius: 50px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: inline-block;
             letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .download-btn {
             background-color: var(--primary-color);
             color: white;
-            border-radius: 4px;
-            padding: 6px 18px;
+            border-radius: 6px;
+            padding: 8px 20px;
             font-size: 0.9rem;
             text-decoration: none;
             font-family: 'Open Sans', sans-serif;
             transition: all 0.3s;
+            border: 1px solid var(--primary-color);
         }
         .download-btn:hover {
-            background-color: var(--secondary-color);
-            color: white;
+            background-color: #fff;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
         }
         
         .btn-portal {
-            background-color: #e9ecef;
-            color: #495057;
+            background-color: #fff;
+            color: var(--text-dark);
             font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 4px;
+            padding: 8px 15px;
+            border-radius: 6px;
             font-size: 0.85rem;
             border: 1px solid #ced4da;
             text-decoration: none;
@@ -149,18 +180,38 @@
         }
 
         .summary-box {
-            background-color: #fff;
-            border-left: 5px solid var(--secondary-color);
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            background-color: rgba(255, 255, 255, 0.95); /* Okunabilirlik için kutu içi beyaz */
+            border-left: 6px solid var(--primary-color);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        
+        /* Tablo arkaplanı */
+        .table-responsive {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .list-group-item {
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 10px;
+            border-radius: 8px !important;
+            transition: background 0.2s;
+        }
+        .list-group-item:hover {
+            background-color: #f8f9fa;
         }
 
         footer {
             background-color: var(--primary-color);
             color: #ecf0f1;
-            padding: 50px 0;
-            font-size: 0.9rem;
+            padding: 60px 0;
+            font-size: 0.95rem;
+            border-top: 5px solid var(--secondary-color);
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -170,7 +221,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-feather-alt me-2"></i>Yüz Sene Yaşamak İçin
+                <i class="fas fa-leaf me-2"></i>Yüz Sene Yaşamak İçin
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -195,13 +246,13 @@
     </header>
 
     <!-- Proje Özeti -->
-    <section id="ozet" class="section-padding bg-light">
+    <section id="ozet" class="section-padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="text-center mb-5">
                         <h2 class="fw-bold">Proje Özeti ve Amaç</h2>
-                        <div style="width: 50px; height: 3px; background-color: var(--secondary-color); margin: 20px auto;"></div>
+                        <div style="width: 60px; height: 4px; background-color: var(--secondary-color); margin: 20px auto; border-radius: 2px;"></div>
                     </div>
                     
                     <div class="summary-box">
@@ -407,7 +458,7 @@
     </section>
 
     <!-- Proje Ekibi -->
-    <section id="ekip" class="section-padding bg-light">
+    <section id="ekip" class="section-padding">
         <div class="container">
             <h2 class="text-center mb-5">Proje Ekibi</h2>
             <div class="row justify-content-center">
@@ -416,8 +467,8 @@
                 <div class="col-md-5 col-lg-4 mb-4">
                     <div class="card card-team h-100 p-4 text-center">
                         <div class="mb-3">
-                            <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-user-tie fa-2x text-secondary"></i>
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #f0f4f3; color: var(--primary-color);">
+                                <i class="fas fa-user-tie fa-3x"></i>
                             </div>
                         </div>
                         <h5 class="fw-bold">Dr. Öğr. Üyesi Ahmet Göksu</h5>
@@ -432,12 +483,12 @@
                 <div class="col-md-5 col-lg-4 mb-4">
                     <div class="card card-team h-100 p-4 text-center">
                         <div class="mb-3">
-                            <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-user-graduate fa-2x text-primary"></i>
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #f0f4f3; color: var(--primary-color);">
+                                <i class="fas fa-user-graduate fa-3x"></i>
                             </div>
                         </div>
                         <h5 class="fw-bold">Nurcihan Duymaç</h5>
-                        <p class="text-primary fw-bold mb-1" style="font-size: 0.9rem;">Proje Yürütücüsü</p>
+                        <p class="fw-bold mb-1" style="color: var(--primary-color); font-size: 0.9rem;">Proje Yürütücüsü</p>
                         <p class="small text-dark mb-2">Fatih Sultan Mehmet Vakıf Üniversitesi<br>Bilim Tarihi Lisans Öğrencisi</p>
                         <hr class="w-25 mx-auto my-3">
                         <p class="small text-muted">Veri Toplama, Transkripsiyon & Mukayeseli Analiz</p>
@@ -456,10 +507,11 @@
                 Bu web sitesi, TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destekleme Programı kapsamında desteklenen proje çıktılarının açık erişimle paylaşılması amacıyla hazırlanmıştır.
             </p>
             <div class="mt-4">
-                <i class="fas fa-university fa-lg mx-2 text-white-50"></i>
-                <i class="fas fa-book-open fa-lg mx-2 text-white-50"></i>
+                <i class="fas fa-university fa-lg mx-3 text-white-50"></i>
+                <i class="fas fa-book-open fa-lg mx-3 text-white-50"></i>
+                <i class="fas fa-heartbeat fa-lg mx-3 text-white-50"></i>
             </div>
-            <hr class="w-25 mx-auto my-4 border-secondary">
+            <hr class="w-25 mx-auto my-4 border-secondary opacity-50">
             <p class="mb-0 small">&copy; 2024-2026 | Yüz Sene Yaşamak İçin Projesi</p>
         </div>
     </footer>
