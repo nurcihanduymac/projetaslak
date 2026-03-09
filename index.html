@@ -105,7 +105,7 @@
             font-weight: 600;
             font-family: 'Open Sans', sans-serif;
             border: none;
-            padding: 15px 30px;
+            padding: 15px 25px; /* Uzun isimler için padding biraz kısıldı */
             border-radius: 10px 10px 0 0;
             transition: all 0.3s ease;
             background-color: rgba(255,255,255,0.5); /* Sekmelerin arkası hafif şeffaf */
@@ -217,6 +217,16 @@
             position: relative;
             z-index: 2;
         }
+        
+        /* Dipnot Link Stili */
+        .footnote-link {
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .footnote-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -261,13 +271,25 @@
                     
                     <div class="summary-box">
                         <p class="mb-4">
-                            Osmanlının son dönemine ait, uzun ve sağlıklı yaşam literatüründe, birbirine yakın tarihlerde dört farklı tercümeye sahip olmasıyla dikkat çekici bir eser olan “Yüz Sene Yaşamak İçin” dönemin tıp tarihine dair incelemelerde bulunmak için önemli bir kaynaktır. Esere dair özet bilgiler içeren kısa bir makale haricinde tatmin edici malumat mevcut değildir.
+                            Osmanlının son dönemine ait, uzun ve sağlıklı yaşam literatüründe, birbirine yakın tarihlerde dört farklı tercümeye sahip olmasıyla dikkat çekici bir eser olan “Yüz Sene Yaşamak İçin” dönemin tıp tarihine dair incelemelerde bulunmak için önemli bir kaynaktır. Esere dair özet bilgiler içeren kısa bir makale haricinde<a href="#dipnot1" class="footnote-link" title="Dipnota git"><sup>[1]</sup></a> tatmin edici malumat mevcut değildir.
                         </p>
                         <p class="mb-4">
                             Bu proje kapsamında “Yüz Sene Yaşamak İçin” adlı eser üzerine ileri araştırmalar yapmak amacıyla; eserin transkripsiyonu yapılıp farklı tercümeler arasındaki değişiklikler incelenmiştir.
                         </p>
+                        <p class="mb-4">
+                            <strong>Yöntem:</strong> Çalışmada ilk olarak eserin kaynak metninin ve tercümelerinin dijital temini sağlandıktan sonra proje yürütücüsü ve danışman tarafından latinize edilmiştir. Ardından proje yürütücüsü ve danışman tarafından metin içeriği detaylı mukayeselere tabi tutulmuş ve sonuçlar nitel analizle incelenmiştir.
+                        </p>
+                        <p class="mb-4">
+                            Tam metin ve transkripsiyonların yer alacağı bir kitap çalışması, mukayese sonucu elde edilen sonuçlar için de bir makale çalışması hedeflenmektedir. Makale ve kitap yayınlandığında elde edilen tüm çıktılar bu web sitesine açık erişim olarak eklenecektir.
+                        </p>
                         <p class="mb-0">
-                            <strong>Yöntem:</strong> Çalışmada ilk olarak eserin kaynak metninin ve tercümelerinin dijital temini sağlandıktan sonra proje yürütücüsü ve danışman tarafından latinize edilmiştir. Ardından proje yürütücüsü ve danışman tarafından metin içeriği detaylı mukayeselere tabi tutulmuş ve sonuçlar nitel analizle incelenmiştir. Bu incelemelerin yer alacağı makale henüz yazım aşamasındadır. Yayınlandığında bu web sitesine makale erişim linki eklenecektir.
+                            Projeyi tanıtıcı nitelikte bazı örnek sayfalara erişilebilmektedir.
+                        </p>
+                        
+                        <!-- Akademik Dipnot Alanı -->
+                        <hr class="my-4" style="opacity: 0.15;">
+                        <p id="dipnot1" class="mb-0 text-muted" style="font-size: 0.85rem;">
+                            <sup>[1]</sup> Erdemir, Ayşegül Demirhan. 2012. "İstanbul'dan Üç Ünlü Hekim'in (Mustafa Münif Paşa, İhsan Sami ve Saim Ali Dilemre) Üç Eseri ve Yorumlamalar." <em>Türk Dünyası Araştırmaları</em>, sayı 197: 53-70.
                         </p>
                     </div>
                 </div>
@@ -286,13 +308,13 @@
             <!-- Sekmeler (Tabs) -->
             <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="orijinal-tab" data-bs-toggle="tab" data-bs-target="#orijinal" type="button" role="tab">Fransızca Orijinal</button>
+                    <button class="nav-link active" id="orijinal-tab" data-bs-toggle="tab" data-bs-target="#orijinal" type="button" role="tab">Fransızca Kaynak Metin Örnek Sayfalar</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="osmanlica-tab" data-bs-toggle="tab" data-bs-target="#osmanlica" type="button" role="tab">Osmanlıca Nüshalar</button>
+                    <button class="nav-link" id="osmanlica-tab" data-bs-toggle="tab" data-bs-target="#osmanlica" type="button" role="tab">Osmanlı Türkçesi Tercümeleri</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="transkrip-tab" data-bs-toggle="tab" data-bs-target="#transkrip" type="button" role="tab">Metin ve Transkripsiyonlar</button>
+                    <button class="nav-link" id="transkrip-tab" data-bs-toggle="tab" data-bs-target="#transkrip" type="button" role="tab">Metin ve Transkripsiyonlardan Örnek Sayfalar</button>
                 </li>
             </ul>
 
@@ -302,7 +324,7 @@
                 <!-- 1. Fransızca Orijinal -->
                 <div class="tab-pane fade show active" id="orijinal" role="tabpanel">
                     <div class="alert alert-light border shadow-sm">
-                        <i class="fas fa-book me-2 text-secondary"></i> Bu metin, Osmanlıca tercümelere kaynaklık eden orijinal Fransızca baskıdır.
+                        <i class="fas fa-book me-2 text-secondary"></i> Bu metin, Osmanlı Türkçesi tercümelere kaynaklık eden orijinal Fransızca baskıdan birkaç sayfayı içerir. Bu baskı tarafımızca Fransa Milli Kütüphanesinden (The Bibliothèque nationale de France) temin edilmiştir. Tüm metin, kitap çalışması tamamlandığında eklenecektir.
                     </div>
                     <div class="table-responsive">
                         <table class="table table-hover align-middle">
@@ -323,7 +345,7 @@
                                     <td>Dr. Pascault & Georges Moreau</td>
                                     <td>Librairie Larousse (Paris)</td>
                                     <td>
-                                        <a href="https://drive.google.com/file/d/1xvRKXgFzzF_DmjBLRXRtkSskyeXan85k/view?usp=sharing" class="download-btn" target="_blank">
+                                        <a href="https://drive.google.com/file/d/10-MQY-HEBiYajosNwgdyiuJDPgpSLLSZ/view?usp=sharing" class="download-btn" target="_blank">
                                             <i class="fas fa-file-pdf me-1"></i> Görüntüle / İndir
                                         </a>
                                     </td>
@@ -333,13 +355,13 @@
                     </div>
                 </div>
 
-                <!-- 2. Osmanlıca Nüshalar -->
+                <!-- 2. Osmanlı Türkçesi Nüshalar -->
                 <div class="tab-pane fade" id="osmanlica" role="tabpanel">
                     <div class="alert alert-light border shadow-sm">
                         <div class="d-flex">
                             <i class="fas fa-info-circle me-3 mt-1 text-primary fa-lg"></i>
                             <div>
-                                <strong>Bilgilendirme:</strong> Bu bölümde eserin tespit edilen <strong>4 farklı</strong> Osmanlıca tercümesi listelenmiştir. Bazı nüshalar TÜYEK Portal üzerinden, bazıları ise proje ekibi tarafından temin edilerek aşağıda sunulmuştur.
+                                <strong>Bilgilendirme:</strong> Bu bölümde eserin tespit edilen 4 farklı Osmanlı Türkçesi tercümesi listelenmiştir. İlk 3 tercüme TÜYEK Portal ve Atatürk Kitaplığı üzerinden dijital olarak temin edilmiştir. Besim Ömer tercümesi ise tarafımızca BİSAV Kütüphanesinden temin edilmiş olup kitaplaşma süreci tamamlandıktan sonra tamamı buraya eklenecektir.
                             </div>
                         </div>
                     </div>
@@ -373,7 +395,7 @@
                                     <td>Mustafa Münif Paşa</td>
                                     <td>1915</td>
                                     <td>
-                                        <a href="https://drive.google.com/file/d/1Z--eLv67Mj4cMB2G0Nu21nR_ncZpjmuL/view?usp=sharing" class="download-btn" target="_blank">
+                                        <a href="https://drive.google.com/file/d/132cr8AQz6uqZrwoIQKv9D2SXN96TI887/view?usp=sharing" class="download-btn" target="_blank">
                                             <i class="fas fa-file-pdf me-1"></i> Görüntüle / İndir
                                         </a>
                                     </td>
@@ -397,7 +419,7 @@
                                     <td>Dr. Besim Ömer [Akalın]</td>
                                     <td>1927</td>
                                     <td>
-                                        <a href="https://drive.google.com/file/d/1ngGdz3eHh1AOPunbAQq8ZNvIqaiRCvVw/view?usp=sharing" class="download-btn" target="_blank">
+                                        <a href="https://drive.google.com/file/d/1cCwoo3PQhRoElS8IUYt1fr_RoMyCFU0h/view?usp=sharing" class="download-btn" target="_blank">
                                             <i class="fas fa-file-pdf me-1"></i> Görüntüle / İndir
                                         </a>
                                     </td>
@@ -417,7 +439,7 @@
                                         <h6 class="mb-1 fw-bold">Emin Hasbi Tercümesi - Transkripsiyon</h6>
                                         <small class="text-danger"><i class="fas fa-file-pdf"></i> PDF</small>
                                     </div>
-                                    <small class="text-muted">Tam metin latinizasyon çalışması.</small>
+                                    <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -428,7 +450,7 @@
                                         <h6 class="mb-1 fw-bold">Mustafa Münif Paşa - Transkripsiyon</h6>
                                         <small class="text-danger"><i class="fas fa-file-pdf"></i> PDF</small>
                                     </div>
-                                    <small class="text-muted">Tam metin latinizasyon çalışması.</small>
+                                    <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -439,7 +461,7 @@
                                         <h6 class="mb-1 fw-bold">Mehmed Raif & Cemil - Transkripsiyon</h6>
                                         <small class="text-danger"><i class="fas fa-file-pdf"></i> PDF</small>
                                     </div>
-                                    <small class="text-muted">Tam metin latinizasyon çalışması.</small>
+                                    <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -450,7 +472,7 @@
                                         <h6 class="mb-1 fw-bold">Besim Ömer Akalın - Transkripsiyon</h6>
                                         <small class="text-danger"><i class="fas fa-file-pdf"></i> PDF</small>
                                     </div>
-                                    <small class="text-muted">Tam metin latinizasyon çalışması.</small>
+                                    <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -471,7 +493,7 @@
                 <div class="col-md-5 col-lg-4 mb-4">
                     <div class="card card-team h-100 p-4 text-center">
                         <div class="mb-3">
-                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #f0f4f3; color: var(--primary-color);">
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #e8f5e9; color: var(--primary-color);">
                                 <i class="fas fa-user-tie fa-3x"></i>
                             </div>
                         </div>
@@ -479,7 +501,7 @@
                         <p class="text-danger fw-bold mb-1" style="font-size: 0.9rem;">Proje Danışmanı</p>
                         <p class="small text-dark mb-2">İstanbul Medeniyet Üniversitesi<br>Bilim Tarihi Enstitüsü<br>Canlı Bilimleri Tarihi Anabilim Dalı Başkanı</p>
                         <hr class="w-25 mx-auto my-3">
-                        <p class="small text-muted">Akademik Süpervizyon & Transkripsiyon Kontrolü</p>
+                        <p class="small text-muted">Akademik Süpervizyon, Transkripsiyon Kontrolü & Mukayeseli Analiz</p>
                     </div>
                 </div>
 
@@ -487,7 +509,7 @@
                 <div class="col-md-5 col-lg-4 mb-4">
                     <div class="card card-team h-100 p-4 text-center">
                         <div class="mb-3">
-                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #f0f4f3; color: var(--primary-color);">
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 90px; height: 90px; background-color: #e8f5e9; color: var(--primary-color);">
                                 <i class="fas fa-user-graduate fa-3x"></i>
                             </div>
                         </div>
