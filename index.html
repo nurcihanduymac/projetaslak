@@ -95,6 +95,20 @@
         .section-padding {
             padding: 100px 0;
         }
+        
+        /* TÜBİTAK Logo Kutusu (Dikey logoya göre uyarlandı) */
+        .tubitak-logo-box {
+            background-color: #fff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .tubitak-logo-box img {
+            height: 75px;
+            width: auto;
+        }
 
         /* Sekme (Tab) Tasarımı */
         .nav-tabs {
@@ -105,10 +119,10 @@
             font-weight: 600;
             font-family: 'Open Sans', sans-serif;
             border: none;
-            padding: 15px 25px; /* Uzun isimler için padding biraz kısıldı */
+            padding: 15px 25px; 
             border-radius: 10px 10px 0 0;
             transition: all 0.3s ease;
-            background-color: rgba(255,255,255,0.5); /* Sekmelerin arkası hafif şeffaf */
+            background-color: rgba(255,255,255,0.5); 
         }
         .nav-tabs .nav-link.active {
             color: #fff;
@@ -123,7 +137,7 @@
         /* Kart ve Tablo Stilleri */
         .card-team {
             border: none;
-            background: rgba(255, 255, 255, 0.9); /* Kartlar hafif şeffaf olsun ki arkadaki sembol hissedilsin */
+            background: rgba(255, 255, 255, 0.9); 
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -184,7 +198,7 @@
         }
 
         .summary-box {
-            background-color: rgba(255, 255, 255, 0.95); /* Okunabilirlik için kutu içi beyaz */
+            background-color: rgba(255, 255, 255, 0.95); 
             border-left: 6px solid var(--primary-color);
             padding: 50px;
             border-radius: 8px;
@@ -253,7 +267,13 @@
     <!-- Hero / Başlık Alanı -->
     <header class="hero-section mt-5">
         <div class="container">
-            <span class="badge-tubitak">TÜBİTAK 2209-A Araştırma Projesi</span>
+            <!-- TÜBİTAK Logosu -->
+            <div class="tubitak-logo-box">
+                <!-- Yerel Logo Dosyası -->
+                <img src="tubitak-logo.png" alt="TÜBİTAK Logo">
+            </div>
+            <br>
+            <span class="badge-tubitak">2209-A Üniversite Öğrencileri Araştırma Projesi</span>
             <h1 class="display-4">"Yüz Sene Yaşamak İçin"</h1>
             <p class="lead w-75 mx-auto" style="font-weight: 300;">Osmanlı Son Dönem Sağlık Literatüründe Bir Eser ve Dört Farklı Tercümesi Üzerine Karşılaştırmalı Bir İnceleme</p>
         </div>
@@ -445,10 +465,12 @@
                             <div class="list-group">
                                 <a href="https://drive.google.com/file/d/1L-6b8pVQu2_ORUxh1aZPT2Ro6sULitlJ/view?usp=sharing" target="_blank" class="list-group-item list-group-item-action py-3">
                                     <div class="d-flex w-100 justify-content-between align-items-center">
-                                        <h6 class="mb-1 fw-bold">Emin Hasbi Tercümesi - Transkripsiyon</h6>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Emin Hasbi Tercümesi - Transkripsiyon</h6>
+                                            <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
+                                        </div>
                                         <span class="badge bg-danger"><i class="fas fa-file-pdf"></i> Görüntüle / İndir</span>
                                     </div>
-                                    <small class="text-muted mt-2 d-block">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -456,10 +478,12 @@
                             <div class="list-group">
                                 <a href="https://drive.google.com/file/d/1KGq2acIgSCdKiYv0FIU36uVbRVUlOwcm/view?usp=sharing" target="_blank" class="list-group-item list-group-item-action py-3">
                                     <div class="d-flex w-100 justify-content-between align-items-center">
-                                        <h6 class="mb-1 fw-bold">Mustafa Münif Paşa Tercümesi - Transkripsiyon</h6>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Mustafa Münif Paşa - Transkripsiyon</h6>
+                                            <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
+                                        </div>
                                         <span class="badge bg-danger"><i class="fas fa-file-pdf"></i> Görüntüle / İndir</span>
                                     </div>
-                                    <small class="text-muted mt-2 d-block">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -467,10 +491,12 @@
                             <div class="list-group">
                                 <a href="https://drive.google.com/file/d/1kymd1cmF4oqoamfYIgWJ7LwGcrrzAryC/view?usp=sharing" target="_blank" class="list-group-item list-group-item-action py-3">
                                     <div class="d-flex w-100 justify-content-between align-items-center">
-                                        <h6 class="mb-1 fw-bold">Mehmed Raif & Mehmed Cemil - Transkripsiyon</h6>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Mehmed Raif & Mehmed Cemil - Transkripsiyon</h6>
+                                            <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
+                                        </div>
                                         <span class="badge bg-danger"><i class="fas fa-file-pdf"></i> Görüntüle / İndir</span>
                                     </div>
-                                    <small class="text-muted mt-2 d-block">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -478,10 +504,12 @@
                             <div class="list-group">
                                 <a href="https://drive.google.com/file/d/1rzmHPxlAw1snoy2AhWD1uTEVdcqkJEyu/view?usp=sharing" target="_blank" class="list-group-item list-group-item-action py-3">
                                     <div class="d-flex w-100 justify-content-between align-items-center">
-                                        <h6 class="mb-1 fw-bold">Besim Ömer Akalın Tercümesi - Transkripsiyon</h6>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Besim Ömer Akalın - Transkripsiyon</h6>
+                                            <small class="text-muted">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
+                                        </div>
                                         <span class="badge bg-danger"><i class="fas fa-file-pdf"></i> Görüntüle / İndir</span>
                                     </div>
-                                    <small class="text-muted mt-2 d-block">Kitaplaşma süreci tamamlandığında tamamı eklenecektir.</small>
                                 </a>
                             </div>
                         </div>
@@ -537,8 +565,13 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <h5 class="mb-3 font-serif">TÜBİTAK 2209-A</h5>
-            <p class="small text-white-50 w-75 mx-auto">
+            <!-- TÜBİTAK Logosu (Footer) -->
+            <div class="tubitak-logo-box mb-3 px-4 py-2">
+                <!-- Yerel Logo Dosyası -->
+                <img src="tubitak-logo.png" alt="TÜBİTAK Logo" style="height: 55px; width: auto;">
+            </div>
+            
+            <p class="small text-white-50 w-75 mx-auto mt-2">
                 Bu web sitesi, TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destekleme Programı kapsamında desteklenen proje çıktılarının açık erişimle paylaşılması amacıyla hazırlanmıştır.
             </p>
             <div class="mt-4">
