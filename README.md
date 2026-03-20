@@ -1,2 +1,2 @@
-# projetaslak
-taslak site
+# YuzSeneYasamak
+yuzseneyasamak projesi
