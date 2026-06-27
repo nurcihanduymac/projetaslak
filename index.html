@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yüz Sene Yaşamak İçin | TÜBİTAK 2209 Projesi</title>
     
-    <!-- SİTE İKONU -->
     <link rel="icon" type="image/jpeg" href="sembol.jpg">
     <link rel="apple-touch-icon" href="sembol.jpg">
     
@@ -17,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome (İkonlar) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -83,6 +82,16 @@
         }
         .tubitak-logo-box img { height: 75px; width: auto; }
 
+        /* Sekme (Tab) Tasarımı */
+        .nav-tabs .nav-link {
+            color: var(--primary-color); font-weight: 600;
+            padding: 15px 25px; border-radius: 10px 10px 0 0;
+            transition: all 0.3s ease; background-color: rgba(255,255,255,0.5); 
+        }
+        .nav-tabs .nav-link.active {
+            color: #fff; background-color: var(--primary-color); border-bottom: none;
+        }
+
         .summary-box {
             background-color: rgba(255, 255, 255, 0.95); 
             border-left: 6px solid var(--primary-color);
@@ -90,31 +99,18 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
-        .timeline-item {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-        .timeline-item:last-child { border-bottom: none; }
-        
-        .badge-date {
-            background-color: var(--secondary-color);
-            color: white; font-size: 0.8rem; padding: 5px 12px;
-            border-radius: 4px; margin-bottom: 10px; display: inline-block;
-        }
+        /* Arşiv Tablo ve Liste */
+        .table-responsive { background-color: rgba(255, 255, 255, 0.95); border-radius: 8px; padding: 10px; }
+        .download-btn { background-color: var(--primary-color); color: white; border-radius: 6px; padding: 8px 20px; font-size: 0.9rem; text-decoration: none; transition: all 0.3s; }
+        .download-btn:hover { background-color: #fff; color: var(--primary-color); border: 1px solid var(--primary-color); }
+        .btn-portal { border: 1px solid #ced4da; padding: 8px 15px; border-radius: 6px; text-decoration: none; color: var(--text-dark); font-size: 0.85rem; transition: all 0.3s; }
+        .btn-portal:hover { background-color: var(--secondary-color); color: white; }
 
-        .nav-tabs .nav-link.active { background-color: var(--primary-color); color: #fff; }
-        
-        .card-team {
-            border: none; background: rgba(255, 255, 255, 0.9); 
-            border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--secondary-color);
-        }
+        .timeline-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 20px; margin-bottom: 25px; }
+        .badge-date { background-color: var(--secondary-color); color: white; font-size: 0.8rem; padding: 5px 12px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
 
+        .card-team { border: none; background: rgba(255, 255, 255, 0.9); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary-color); }
         footer { background-color: var(--primary-color); color: #ecf0f1; padding: 60px 0; border-top: 5px solid var(--secondary-color); }
-        
-        .download-btn { background-color: var(--primary-color); color: white; padding: 8px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; }
-        .btn-portal { border: 1px solid #ced4da; padding: 8px 15px; border-radius: 6px; text-decoration: none; color: var(--text-dark); font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -123,6 +119,9 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-leaf me-2"></i>Yüz Sene Yaşamak İçin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#ozet">Proje Hakkında</a></li>
@@ -144,7 +143,7 @@
         </div>
     </header>
 
-    <!-- PROJE HAKKINDA (YENİLENEN BÖLÜM) -->
+    <!-- PROJE HAKKINDA -->
     <section id="ozet" class="section-padding">
         <div class="container">
             <div class="row justify-content-center">
@@ -156,7 +155,7 @@
                     
                     <div class="summary-box">
                         <h3 class="h4 mb-3 fw-bold">Yüz Sene Yaşamak İçin: Literatür ve Amaç</h3>
-                        <p>Osmanlı’nın son ve Cumhuriyet’in erken dönemine ait uzun ve sağlıklı yaşam literatüründe, birbirine yakın tarihlerde dört farklı çeviriye sahip olmasıyla dikkat çeken <strong>“Yüz Sene Yaşamak İçin” (Pour Vivre Cent Ans, 1913)</strong>, dönemin tıp tarihini, bireysel ve toplumsal hıfzıssıhha (sağlık koruma) yaklaşımlarını anlamak açısından oldukça kıymetli bir kaynaktır. Fransız yazarlar Dr. Pascault ve Georges Moreau’ya ait olan bu esere dair, daha önce literatürde özet bilgiler içeren kısa bir makale dışında tatmin edici bir malumat mevcut değildi.</p>
+                        <p>Osmanlı’nın son ve Cumhuriyet’in erken dönemine ait uzun ve sağlıklı yaşam literatüründe, birbirine yakın tarihlerde dört farklı çeviriye sahip olmasıyla dikkat çeken <strong>“Yüz Sene Yaşamak İçin” (Pour Vivre Cent Ans, 1913)</strong>, dönemin tıp tarihini, bireysel ve toplumsal hıfzıssıhha (sağlık koruma) yaklaşımlarını anlamak açısından oldukça kıymetli bir kaynaktır.</p>
                         <p>Bu proje; söz konusu tercüme eserlerin transkripsiyonunu yapmayı ve bu çeviriler üzerinden <em>Pour Vivre Cent Ans</em>’ın hem kültürel hem de bilimsel alımlanışını (resepsiyonunu) derinlemesine incelemeyi amaçlamaktadır.</p>
 
                         <hr class="my-5 opacity-25">
@@ -184,71 +183,107 @@
                         <div class="timeline-item">
                             <span class="badge-date">Kasım 2025 - Ocak 2026</span>
                             <h6 class="fw-bold">Besim Ömer Akalın Tercümesi ve Ek Kaynaklar</h6>
-                            <p class="small mb-0">BİSAV Kütüphanesindeki nüsha üzerinden 1927 tarihli "Yüz Yıl Yaşamak İçin 22 Emr-i Sıhhiye" transkribe edildi. Ayrıca Harf Devrimi sonrası basılmış “Gençliği Koruma Çok Yaşama” eseri dijitalize edildi.</p>
-                        </div>
-
-                        <div class="timeline-item border-0 pb-0">
-                            <span class="badge-date">Mart 2026</span>
-                            <h6 class="fw-bold">Web Sitesi Tasarımı ve Son Kontroller</h6>
-                            <p class="small mb-0">Proje verilerinin açık erişimli paylaşılacağı platformun son kontrolleri yapıldı.</p>
+                            <p class="small mb-0">BİSAV Kütüphanesindeki nüsha üzerinden 1927 tarihli "Yüz Yıl Yaşamak İçin 22 Emr-i Sıhhiye" transkribe edildi.</p>
                         </div>
 
                         <hr class="my-5 opacity-25">
 
                         <h3 class="h4 mb-4 fw-bold"><i class="fas fa-microscope me-2"></i>Yöntem ve Temel Bulgular</h3>
-                        <p>Proje yürütücüsü ve danışman tarafından gerçekleştirilen <strong>latinizasyon, transkripsiyon</strong> ve <strong>nitel analizler</strong> sonucunda şu bulgulara ulaşılmıştır:</p>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Yoğun Toplumsal İlgi:</strong> Kısa sürede 4 farklı çeviri, halkın sağlık bilgilerine duyduğu ihtiyacı gösterir.</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Aydınlatma Misyonu:</strong> Hekimlerin halkı bilinçlendirme görevini üstlendiği görülmektedir.</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Paradigma Geçişi:</strong> Klasik tıp ile modern tıp arasındaki geçiş metinlerde net hissedilmektedir.</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>Paradigma Geçişi:</strong> Klasik tıp ile modern tıp arasındaki geçiş net hissedilmektedir.</li>
                         </ul>
-
-                        <hr class="my-5 opacity-25">
-
-                        <h3 class="h4 mb-4 fw-bold"><i class="fas fa-graduation-cap me-2"></i>Proje Çıktıları</h3>
-                        <div class="row text-center">
-                            <div class="col-md-6 mb-3">
-                                <div class="p-3 border rounded bg-light">
-                                    <h6 class="fw-bold">Kitap Çalışması</h6>
-                                    <p class="small mb-0">Tüm çevirileri içeren kapsamlı bir eser hazırlanmaktadır.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="p-3 border rounded bg-light">
-                                    <h6 class="fw-bold">Akademik Makale</h6>
-                                    <p class="small mb-0">Mukayeseli analizleri içeren çalışma yayın sürecindedir.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Arşiv Bölümü (Mevcut yapınız korundu) -->
-    <section id="arsiv" class="section-padding bg-white">
-        <div class="container text-center">
-            <h2 class="mb-5">Dijital Arşiv</h2>
-            <p>Proje çıktılarına ve örnek sayfalara "Dijital Arşiv" sekmesinden ulaşabilirsiniz.</p>
-            <!-- Mevcut Tab yapınızı buraya ekleyebilirsiniz -->
+    <!-- DİJİTAL ARŞİV (GERİ GETİRİLEN BÖLÜM) -->
+    <section id="arsiv" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Dijital Arşiv ve Çıktılar</h2>
+                <p class="text-muted">Proje kapsamında incelenen orijinal metinler ve transkripsiyonlara aşağıdan erişebilirsiniz.</p>
+            </div>
+
+            <!-- Sekmeler -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="orijinal-tab" data-bs-toggle="tab" data-bs-target="#orijinal" type="button" role="tab">Fransızca Kaynak Metin</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="osmanlica-tab" data-bs-toggle="tab" data-bs-target="#osmanlica" type="button" role="tab">Osmanlı Türkçesi Tercümeleri</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="transkrip-tab" data-bs-toggle="tab" data-bs-target="#transkrip" type="button" role="tab">Transkripsiyon Örnekleri</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <!-- 1. Fransızca -->
+                <div class="tab-pane fade show active" id="orijinal" role="tabpanel">
+                    <div class="table-responsive mt-3">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr><th>Eser Adı</th><th>Yazar</th><th>Dosya</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Pour vivre cent ans</strong></td>
+                                    <td>Dr. Pascault & Georges Moreau</td>
+                                    <td><a href="https://drive.google.com/file/d/16Ct-Nv8SmOm5DjVWoF8E8MwID1SgcJZD/view?usp=sharing" class="download-btn" target="_blank">Görüntüle</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Osmanlıca -->
+                <div class="tab-pane fade" id="osmanlica" role="tabpanel">
+                    <div class="table-responsive mt-3">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr><th>Eser Adı</th><th>Mütercim</th><th>Erişim</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Muhafaza-i Hayat Yüz Sene Yaşamak Çaresi</td><td>Emin Hasbi</td><td><a href="https://portal.yek.gov.tr/works/detail/170061" class="btn-portal" target="_blank">Portal</a></td></tr>
+                                <tr><td>Yüz Sene Yaşamak İçin</td><td>Mustafa Münif Paşa</td><td><a href="https://drive.google.com/file/d/1kXTGwpOdZf5BcZmfr9obMw47LI0HkY7I/view?usp=sharing" class="download-btn" target="_blank">İndir</a></td></tr>
+                                <tr><td>Yüz Sene Yaşamanın Çaresi</td><td>Mehmed Rauf & Mehmed Cemil</td><td><a href="https://portal.yek.gov.tr/works/detail/170109" class="btn-portal" target="_blank">Portal</a></td></tr>
+                                <tr><td>Yüz Yıl Yaşamak İçin 22 Emr-i Sıhhiye</td><td>Dr. Besim Ömer</td><td><a href="https://drive.google.com/file/d/11rl0dV8GH_67GTsD5uWYiEHys2TsSm8y/view?usp=sharing" class="download-btn" target="_blank">İndir</a></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Transkripsiyonlar -->
+                <div class="tab-pane fade" id="transkrip" role="tabpanel">
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3"><a href="https://drive.google.com/file/d/1L-6b8pVQu2_ORUxh1aZPT2Ro6sULitlJ/view?usp=sharing" target="_blank" class="btn btn-outline-dark w-100 p-3">Emin Hasbi Transkripsiyon</a></div>
+                        <div class="col-md-6 mb-3"><a href="https://drive.google.com/file/d/1KGq2acIgSCdKiYv0FIU36uVbRVUlOwcm/view?usp=sharing" target="_blank" class="btn btn-outline-dark w-100 p-3">Mustafa Münif Transkripsiyon</a></div>
+                        <div class="col-md-6 mb-3"><a href="https://drive.google.com/file/d/1kymd1cmF4oqoamfYIgWJ7LwGcrrzAryC/view?usp=sharing" target="_blank" class="btn btn-outline-dark w-100 p-3">M. Rauf & M. Cemil Transkripsiyon</a></div>
+                        <div class="col-md-6 mb-3"><a href="https://drive.google.com/file/d/1rzmHPxlAw1snoy2AhWD1uTEVdcqkJEyu/view?usp=sharing" target="_blank" class="btn btn-outline-dark w-100 p-3">Besim Ömer Transkripsiyon</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Ekip Bölümü -->
+    <!-- EKİP -->
     <section id="ekip" class="section-padding">
         <div class="container">
             <h2 class="text-center mb-5">Proje Ekibi</h2>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center text-center">
                 <div class="col-md-5 col-lg-4 mb-4">
-                    <div class="card card-team h-100 p-4 text-center">
+                    <div class="card card-team h-100 p-4">
                         <h5 class="fw-bold">Dr. Öğr. Üyesi Ahmet Göksu</h5>
                         <p class="text-danger fw-bold mb-1 small">Proje Danışmanı</p>
                         <p class="small">İstanbul Medeniyet Üniversitesi</p>
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-4 mb-4">
-                    <div class="card card-team h-100 p-4 text-center">
+                    <div class="card card-team h-100 p-4">
                         <h5 class="fw-bold">Nurcihan Duymaç</h5>
                         <p class="text-success fw-bold mb-1 small">Proje Yürütücüsü</p>
                         <p class="small">Fatih Sultan Mehmet Vakıf Üniversitesi</p>
